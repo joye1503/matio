@@ -51,6 +51,18 @@ matrix:
         - HDF5_VERSION=1.12.0
         - MAX_RANK=3
     - os: linux
+      arch: arm64-graviton2
+      virt: lxd
+      group: edge
+      dist: xenial
+      compiler: gcc-4.8
+      env:
+        - ENABLE_EXTENDED_SPARSE=yes
+        - ENABLE_MAT73=yes
+        - WITH_ZLIB=$TRAVIS_BUILD_DIR/zlib
+        - HDF5_VERSION=1.12.0
+        - MAX_RANK=3
+    - os: linux
       arch: s390x
       compiler: gcc-4.8
       env:
@@ -60,6 +72,27 @@ matrix:
         - HDF5_VERSION=1.12.0
         - MAX_RANK=3
     - os: linux
+      compiler: gcc-4.8
+      env:
+        - ENABLE_EXTENDED_SPARSE=yes
+        - ENABLE_MAT73=yes
+        - WITH_ZLIB=$TRAVIS_BUILD_DIR/zlib
+        - HDF5_VERSION=1.10.7
+        - MAX_RANK=3
+    - os: linux
+      arch: arm64
+      compiler: gcc-4.8
+      env:
+        - ENABLE_EXTENDED_SPARSE=yes
+        - ENABLE_MAT73=yes
+        - WITH_ZLIB=$TRAVIS_BUILD_DIR/zlib
+        - HDF5_VERSION=1.10.7
+        - MAX_RANK=3
+    - os: linux
+      arch: arm64-graviton2
+      group: edge
+      virt: lxd
+      dist: xenial
       compiler: gcc-4.8
       env:
         - ENABLE_EXTENDED_SPARSE=yes
